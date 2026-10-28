@@ -1,4 +1,4 @@
-# Week 2 - Supervised Machine Learning Models
+ Supervised Machine Learning Models
 
 Regression and classification with Scikit-learn on the cleaned loan applicant dataset from Week 1
 (Python for Machine Learning and Data Preprocessing).
