@@ -1,0 +1,132 @@
+{
+  "log": {
+    "1": "Shape: (515, 15)\nAll columns numeric: True\n\nRegression features : ['Age', 'Gender', 'Education', 'Credit_Score', 'Loan_Amount', 'Loan_Term_Months', 'City_Delhi', 'City_Kanpur', 'City_Lucknow', 'City_Mumbai', 'Employment_Status_Salaried', 'Employment_Status_Self-Employed', 'Employment_Status_Unemployed']\nRegression target   : Annual_Income\n\nClassification target balance (%):\nApproved\n1    61.4\n0    38.6\nName: proportion, dtype: float64",
+    "2": "Regression     - train: (412, 13)  test: (103, 13)\nClassification - train: (412, 14)  test: (103, 14)\nApproval rate in train / test (%): 61.4 / 61.2",
+    "3": "                     MAE   RMSE     R2  CV_R2    MAE_Rs\nModel                                                  \nRandom Forest      0.312  0.441  0.791  0.688   70812.0\nLinear Regression  0.328  0.473  0.760  0.701   74400.0\nDecision Tree      0.377  0.504  0.727  0.547   85509.0\nKNN Regressor      0.463  0.568  0.654  0.598  105032.0\n\nLinear Regression coefficients (effect of each feature on income, in z-score units):\nEmployment_Status_Self-Employed   -0.071\nLoan_Term_Months                  -0.068\nCredit_Score                      -0.009\nCity_Kanpur                        0.025\nCity_Mumbai                        0.032\nEmployment_Status_Salaried         0.035\nGender                             0.041\nEmployment_Status_Unemployed       0.067\nLoan_Amount                        0.070\nCity_Delhi                         0.095\nCity_Lucknow                       0.133\nEducation                          0.517\nAge                                0.668\ndtype: float64",
+    "4": "                     Accuracy  Precision  Recall     F1  ROC_AUC  CV_Accuracy\nModel                                                                        \nLogistic Regression     0.728      0.746   0.841  0.791    0.758        0.697\nRandom Forest           0.738      0.750   0.857  0.800    0.748        0.660\nKNN                     0.709      0.714   0.873  0.786    0.730        0.670\nDecision Tree           0.660      0.719   0.730  0.724    0.643        0.650",
+    "5": "                                                                  Best_parameters\nModel                                                                            \nLogistic Regression                                                    {'C': 0.1}\nKNN                                                           {'n_neighbors': 21}\nDecision Tree                             {'max_depth': 2, 'min_samples_leaf': 1}\nRandom Forest        {'max_depth': 4, 'min_samples_leaf': 3, 'n_estimators': 200}\n\n                     CV_AUC  Accuracy     F1  ROC_AUC\nModel                                                \nLogistic Regression   0.738     0.718  0.785    0.756\nRandom Forest         0.721     0.709  0.786    0.752\nDecision Tree         0.713     0.709  0.758    0.712\nKNN                   0.686     0.670  0.764    0.751",
+    "6": "                     Default_AUC  Tuned_AUC  Default_Acc  Tuned_Acc\nModel                                                              \nLogistic Regression        0.758      0.756        0.728      0.718\nKNN                        0.730      0.751        0.709      0.670\nDecision Tree              0.643      0.712        0.660      0.709\nRandom Forest              0.748      0.752        0.738      0.709\n\nBest classifier (highest cross-validated AUC): Logistic Regression\nBest regressor  (highest cross-validated R2) : Linear Regression\n\nConfusion matrix of Logistic Regression (rows = actual, columns = predicted):\n          Rejected  Approved\nRejected        21        19\nApproved        10        53\n\nRandom Forest feature importance (top 6):\nCredit_Score        0.393\nLoan_Amount         0.150\nAnnual_Income       0.138\nAge                 0.107\nLoan_Term_Months    0.045\nEducation           0.041\ndtype: float64\n\nSaved models/best_classifier.joblib and models/best_regressor.joblib"
+  },
+  "best_clf": "Logistic Regression",
+  "best_reg": "Linear Regression",
+  "reg": [
+    {
+      "Model": "Linear Regression",
+      "MAE": 0.32767778,
+      "RMSE": 0.4726722147,
+      "R2": 0.7602880188,
+      "CV_R2": 0.7010673753,
+      "MAE_Rs": 74400.4195958779
+    },
+    {
+      "Model": "KNN Regressor",
+      "MAE": 0.4625878926,
+      "RMSE": 0.5682637906,
+      "R2": 0.6535268681,
+      "CV_R2": 0.5981745581,
+      "MAE_Rs": 105032.2463294559
+    },
+    {
+      "Model": "Decision Tree",
+      "MAE": 0.3766045333,
+      "RMSE": 0.5041277852,
+      "R2": 0.7273215211,
+      "CV_R2": 0.5471960582,
+      "MAE_Rs": 85509.4150574974
+    },
+    {
+      "Model": "Random Forest",
+      "MAE": 0.3118729163,
+      "RMSE": 0.4408991299,
+      "R2": 0.7914318075,
+      "CV_R2": 0.6877814541,
+      "MAE_Rs": 70811.8683932371
+    }
+  ],
+  "clf_default": [
+    {
+      "Model": "Logistic Regression",
+      "Accuracy": 0.7281553398,
+      "Precision": 0.7464788732,
+      "Recall": 0.8412698413,
+      "F1": 0.7910447761,
+      "ROC_AUC": 0.7575396825,
+      "CV_Accuracy": 0.6966500147
+    },
+    {
+      "Model": "KNN",
+      "Accuracy": 0.7087378641,
+      "Precision": 0.7142857143,
+      "Recall": 0.873015873,
+      "F1": 0.7857142857,
+      "ROC_AUC": 0.7295634921,
+      "CV_Accuracy": 0.6699970614
+    },
+    {
+      "Model": "Decision Tree",
+      "Accuracy": 0.6601941748,
+      "Precision": 0.71875,
+      "Recall": 0.7301587302,
+      "F1": 0.7244094488,
+      "ROC_AUC": 0.6428571429,
+      "CV_Accuracy": 0.6504554805
+    },
+    {
+      "Model": "Random Forest",
+      "Accuracy": 0.7378640777,
+      "Precision": 0.75,
+      "Recall": 0.8571428571,
+      "F1": 0.8,
+      "ROC_AUC": 0.748015873,
+      "CV_Accuracy": 0.6602997355
+    }
+  ],
+  "clf_tuned": [
+    {
+      "Model": "Logistic Regression",
+      "Best_parameters": "{'C': 0.1}",
+      "CV_AUC": 0.7376800285,
+      "Accuracy": 0.7184466019,
+      "F1": 0.7851851852,
+      "ROC_AUC": 0.7563492063
+    },
+    {
+      "Model": "KNN",
+      "Best_parameters": "{'n_neighbors': 21}",
+      "CV_AUC": 0.6857482606,
+      "Accuracy": 0.6699029126,
+      "F1": 0.7638888889,
+      "ROC_AUC": 0.7505952381
+    },
+    {
+      "Model": "Decision Tree",
+      "Best_parameters": "{'max_depth': 2, 'min_samples_leaf': 1}",
+      "CV_AUC": 0.713241975,
+      "Accuracy": 0.7087378641,
+      "F1": 0.7580645161,
+      "ROC_AUC": 0.7123015873
+    },
+    {
+      "Model": "Random Forest",
+      "Best_parameters": "{'max_depth': 4, 'min_samples_leaf': 3, 'n_estimators': 200}",
+      "CV_AUC": 0.7212198767,
+      "Accuracy": 0.7087378641,
+      "F1": 0.7857142857,
+      "ROC_AUC": 0.7523809524
+    }
+  ],
+  "n_train": 412,
+  "n_test": 103,
+  "importance_top": {
+    "Credit_Score": 0.3930917567,
+    "Loan_Amount": 0.1495784619,
+    "Annual_Income": 0.1380431578,
+    "Age": 0.1069497019,
+    "Loan_Term_Months": 0.0447318199,
+    "Education": 0.0414938483,
+    "Gender": 0.0221969174,
+    "Employment_Status_Unemployed": 0.0201133431,
+    "City_Mumbai": 0.0166770114,
+    "City_Lucknow": 0.0160552507
+  }
+}
